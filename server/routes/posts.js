@@ -31,7 +31,15 @@ router.post('/post', requireLogin, (req,res) =>{
 })
 
 
-
+router.get('/post',requireLogin, (req, res) =>{
+    Post.find()
+    .populate("postedBy", "_id")
+    .then(allPosts =>{
+        res.json({allPosts})
+    }).catch(err=>{
+        console.log(err)
+    })
+})
 
 
 

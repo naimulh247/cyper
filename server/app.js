@@ -6,6 +6,10 @@ const {MONGOURI} = require('./keys')
 
 require('./models/user')
 
+// order of the app.use matters
+app.use(express.json())
+app.use(require('./routes/authentication'))
+
 mongoose.connect(MONGOURI)
 mongoose.connection.on('connected', () =>{
     console.log("connected to mongodb")

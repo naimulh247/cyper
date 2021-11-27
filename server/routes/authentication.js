@@ -41,4 +41,27 @@ router.post('/signup', (req, res)=>{
     
 })
 
+router.post('/signin', (req, res)=>{
+    const {email, password} = req.body
+    console.log(req.body)
+    if(!email | !password){
+        return res.status(400).json({err:"Missing field"})
+    }
+
+    User.findOne({email}).then(savedUser =>{
+        if(!savedUser){
+            return res.status(400).json({err:"Invalid user or password"})
+        }
+        bcrypt.compare(password, savedUser.password).then(userMatched=>{
+            if(userMatched){
+                res.json({message:"Succesfully logged in!"})
+            }
+            else{
+                return res.status(400).json({err:"Invalid user or password"})
+            }
+        }).catch(err=>{
+            console.log(err)
+        })
+    })
+})
 module.exports = router

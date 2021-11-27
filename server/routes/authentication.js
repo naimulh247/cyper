@@ -3,7 +3,14 @@ const router = express.Router()
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const User = mongoose.model("User")
+const jsonwebtoken = require('jsonwebtoken')
+const {JSON_Key} = require('../keys')
+const requireLogin = require('../middleware/requireLogin')
 
+
+// router.get('/protected', requireLogin, (req, res)=>{
+//     res.send("hellow")
+// })
 
 router.post('/signup', (req, res)=>{
     console.log(req.body.email)
@@ -54,7 +61,9 @@ router.post('/signin', (req, res)=>{
         }
         bcrypt.compare(password, savedUser.password).then(userMatched=>{
             if(userMatched){
-                res.json({message:"Succesfully logged in!"})
+                // res.json({message:"Succesfully logged in!"})
+                const jsonToken =  jsonwebtoken.sign({_id:savedUser._id}, JSON_Key)
+                res.json({jsonToken})
             }
             else{
                 return res.status(400).json({err:"Invalid user or password"})

@@ -12,17 +12,21 @@ const requireLogin = require('../middleware/requireLogin')
 //     res.send("hellow")
 // })
 
+// 
+// REMEBER TO SEND ERR MSG BEFORE STATUS CODE!!!!
+// 
 router.post('/signup', (req, res)=>{
+    // console.log(req)
     console.log(req.body.email)
     const {email, password} = req.body
 
     if(!email || !password){
-        return res.status(400).json({err: "Missing fields"})
+        return res.json({err: "Missing fields"}).status(400)
     }
 
     User.findOne({email}).then((existingUser) =>{
         if(existingUser){
-            return res.status(422).json({err:"User alreay exists"})
+            return res.json({err:"User alreay exists"}).status(422)
         }
 
         bcrypt.hash(password, 14).then(hashedPassword =>{

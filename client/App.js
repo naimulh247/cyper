@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import Landing from './screens/Landing'
 import Register from './screens/Authentication/Register'
 import Login from './screens/Authentication/Login'
+import Feed from './screens/User/Feed'
 import DeviceStorage from './services/DeviceStorage'
 
 const NavStack = createStackNavigator()
@@ -53,8 +54,7 @@ export class App extends Component {
 
       return(
         <View>
-          <Text>Home</Text>
-          <Button title="logout" onPress={()=>this.delete()} />
+          <Feed jwt={this.state.jwt} delete={this.delete}/>
         </View>
       )
     // return (

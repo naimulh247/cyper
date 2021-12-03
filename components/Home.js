@@ -11,6 +11,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import Feed from './MainScreens/Feed'
 import Post from './MainScreens/Post'
+import Profile from './MainScreens/Profile'
 
 const NewPost = () => {
     return (null)
@@ -51,6 +52,12 @@ export class Home extends Component {
                             <MaterialCommunityIcons name="plus-box" color={color} size={26} />
                         )
                     }}
+                />
+
+                <Tab.Screen name="Profile Screen" component={Profile}
+                    options={{
+                        tabBarIcon: ({ color, size }) => (
+                            <MaterialCommunityIcons name="account-circle" color={color} size={26}/>)}}
                 />
                 {/* <Tab.Screen name="Settings" component={SettingsScreen} /> */}
             </Tab.Navigator>

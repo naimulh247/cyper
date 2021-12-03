@@ -8,7 +8,8 @@ import {View, Text} from 'react-native'
 import Landing from './components/authentication/Landing'
 import Register from './components/authentication/Register';
 import Login from './components/authentication/Login';
-import Feed from './components/Feed'
+import Feed from './components/Home'
+import Post from './components/MainScreens/Post'
 
 // Redux imports
 import {Provider} from 'react-redux'
@@ -87,9 +88,14 @@ export default class App extends Component {
 
     return(
       <Provider store={store}>
-      <Feed/>
+      {/* <Feed/> */}
+        <NavigationContainer>
+          <NavigationStack.Navigator initialRouteName="Landing" >
+                <NavigationStack.Screen name="Feed" component={Feed} options={{headerShown:false}} />
+                <NavigationStack.Screen name="Post" component={Post} navigation={this.props.navigation} />
+              </NavigationStack.Navigator>
+          </NavigationContainer>
       </Provider>
-        
     )
     
   }

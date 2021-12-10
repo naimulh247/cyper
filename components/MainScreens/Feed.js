@@ -1,14 +1,23 @@
-import React, { Component } from 'react'
-import {View, Text, } from 'react-native'
+import React, {useState} from 'react'
+import firebase from 'firebase/app';
+import {View, Text, Button, FlatList} from 'react-native'
+import { connect } from 'react-redux'
+export default function Feed() {
 
-export default class Feed extends Component {
-    render() {
-        return (
-            <View>
-              <Text>
-                  Feed
-              </Text>
-            </View>
-        )
-    }
+    const [post, setPost] = useState([])
+
+    // useEffect(() => {
+    //     let posts = []
+
+    //     firebase.auth().
+        
+        
+    // }, [])
+    
+    return (
+        <View>
+            
+        </View>
+    )
 }
+

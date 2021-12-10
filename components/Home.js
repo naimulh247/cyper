@@ -4,7 +4,7 @@ import { View, Text } from 'react-native'
 // redux stuff
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { getUser } from '../redux/actions/actions'
+import { getUser, getUserPosts } from '../redux/actions/actions'
 
 // navigation and tabs imports
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
@@ -21,6 +21,7 @@ const Tab = createMaterialBottomTabNavigator();
 export class Home extends Component {
     componentDidMount() {
         this.props.getUser();
+        this.props.getUserPosts();
     }
     render() {
     
@@ -68,6 +69,6 @@ export class Home extends Component {
 const mapStateToProps = (store) => ({
     currentUser: store.userState.currentUser
 })
-const mapDispatchProps = (dispatch) => bindActionCreators({getUser}, dispatch);
+const mapDispatchProps = (dispatch) => bindActionCreators({getUser, getUserPosts}, dispatch);
 
 export default connect(mapStateToProps, mapDispatchProps)(Home);

@@ -42,14 +42,14 @@ export class Home extends Component {
                         ),
                     }}
                 />
-                <Tab.Screen name="Search" component={Search} 
+                {/* <Tab.Screen name="Search" component={Search} 
                 
                 options={{
                     tabBarIcon:({color, size}) => (
                         <MaterialCommunityIcons name="magnify" color={color} size={26} />
                     ),
                 }}
-            />
+            /> */}
                 <Tab.Screen name="Post Something" component={NewPost}
                     listeners={({navigation})=>({
                         tabPress: event => {

@@ -24,9 +24,12 @@ export default function Post(props) {
         <View>
             <TextInput placeholder="Say something :) "
             onChangeText={(text) => setText(text)}
+            multiline
+            numberOfLines={4}
             />
-
-            <Button title="Send" onPress={() => upload()} />
+            <View style={{marginBottom: '0px'}}>
+                <Button title="Send" onPress={() => upload()} />
+            </View>
         </View>
     )
 }

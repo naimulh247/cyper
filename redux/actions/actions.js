@@ -27,6 +27,7 @@ export function getUserPosts() {
             .doc(firebase.auth().currentUser.uid)
             .collection("userPosts")
             // order by time stamp
+            // .where('text', '>=' , 'hello')
             .orderBy("creation", "asc")
             .get()
             .then((snapshot) => {

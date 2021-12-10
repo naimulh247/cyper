@@ -12,6 +12,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Feed from './MainScreens/Feed'
 import Post from './MainScreens/Post'
 import Profile from './MainScreens/Profile'
+import Search from './MainScreens/Search'
 
 const NewPost = () => {
     return (null)
@@ -41,6 +42,14 @@ export class Home extends Component {
                         ),
                     }}
                 />
+                <Tab.Screen name="Search" component={Search} 
+                
+                options={{
+                    tabBarIcon:({color, size}) => (
+                        <MaterialCommunityIcons name="magnify" color={color} size={26} />
+                    ),
+                }}
+            />
                 <Tab.Screen name="Post Something" component={NewPost}
                     listeners={({navigation})=>({
                         tabPress: event => {

@@ -13,6 +13,7 @@ import Feed from './MainScreens/Feed'
 import Post from './MainScreens/Post'
 import Profile from './MainScreens/Profile'
 import Search from './MainScreens/Search'
+import About from './MainScreens/About'
 
 const NewPost = () => {
     return (null)
@@ -68,6 +69,13 @@ export class Home extends Component {
                     options={{
                         tabBarIcon: ({ color, size }) => (
                             <MaterialCommunityIcons name="account-circle" color={color} size={26}/>)}}
+                />
+                <Tab.Screen name="About Screen" component={About}
+                options={{
+                    tabBarIcon:({color, size}) => (
+                        <MaterialCommunityIcons name="information" color={color} size={26} />
+                    )
+                }}
                 />
                 {/* <Tab.Screen name="Settings" component={SettingsScreen} /> */}
             </Tab.Navigator>

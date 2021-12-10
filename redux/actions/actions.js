@@ -46,7 +46,7 @@ export function getUserPosts() {
 
 
 
-
+// not used in app
 export function fetchAllPosts(uid){
     return((dispatch, getState) => {
         const found = getState().userState.users.some(element => element.uid == uid);
@@ -71,7 +71,7 @@ export function fetchAllPosts(uid){
     })
 }
 
-
+// not used in app
 export function getUsersAllPosts(uid) {
     return ((dispatch, getState) => {
         firebase.firestore()

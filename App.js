@@ -10,7 +10,7 @@ import Register from './components/authentication/Register';
 import Login from './components/authentication/Login';
 import Feed from './components/Home'
 import Post from './components/MainScreens/Post'
-
+import Profile from './components/MainScreens/Profile';
 // Redux imports
 import {Provider} from 'react-redux'
 import {createStore, applyMiddleware} from 'redux'

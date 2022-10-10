@@ -31,10 +31,11 @@ run using expo!
 # Developer Notes
 For this app a lot of packages are getting used, including the basics that was covered in class such as ScrollView. Flatlist, and others. But the most important package is firebase, as it allowed me to not have a specific backend running, and it is not the most beginner friendly with documentation. I also used Tab Navigation and Material icons with Paperview, Redux and lots more custom components.
 
-
+<!---
 # Screenshots
 ![image](https://github.com/naimulh247/cyper/blob/master/screenshots/1.png)
 !![image](https://github.com/naimulh247/cyper/blob/master/screenshots/2.png)
 ![image](https://github.com/naimulh247/cyper/blob/master/screenshots/3.png)
 ![image](https://github.com/naimulh247/cyper/blob/master/screenshots/4.png)
 ![image](https://github.com/naimulh247/cyper/blob/master/screenshots/5.png)
+-->
